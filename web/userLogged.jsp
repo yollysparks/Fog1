@@ -16,7 +16,7 @@
       <body>
 
          <center>
-       <%User currentUser = (User(ses.getAttribute("currentUser"));%>
+       <%User currentUser = (User(ses.getAttribute("currentUser")));%>
 			
             Welcome <%= currentUser.getFirstName() + " " + currentUser.getLastName() %>
          </center>
