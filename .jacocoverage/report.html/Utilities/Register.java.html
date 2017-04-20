@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="da"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>Register.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCoverage analysis of project &quot;Fog&quot; (powered by JaCoCo from EclEmma)</a> &gt; <a href="index.source.html" class="el_package">Utilities</a> &gt; <span class="el_source">Register.java</span></div><h1>Register.java</h1><pre class="source lang-java linenums">/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package Utilities;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ *
+ * @author felesiah
+ */
+@WebServlet(name = &quot;Register&quot;, urlPatterns = {&quot;/Register&quot;})
+<span class="nc" id="L27">public class Register extends HttpServlet {</span>
+
+//   
+//    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+//            throws ServletException, IOException {
+//        response.setContentType(&quot;text/html;charset=UTF-8&quot;);
+// 
+    
+
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+<span class="nc" id="L39">          doPost(request, response);</span>
+<span class="nc" id="L40">    }</span>
+
+    
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+<span class="nc" id="L46">       PrintWriter out = response.getWriter();</span>
+<span class="nc" id="L47">            String name =request.getParameter(&quot;username&quot;);</span>
+<span class="nc" id="L48">            String fname =request.getParameter(&quot;firstname&quot;);</span>
+<span class="nc" id="L49">            String lname =request.getParameter(&quot;lastname&quot;);</span>
+<span class="nc" id="L50">            String pswd =request.getParameter(&quot;password&quot;);</span>
+<span class="nc" id="L51">            String email =request.getParameter(&quot;email&quot;);</span>
+<span class="nc" id="L52">            String address =request.getParameter(&quot;address&quot;);</span>
+<span class="nc" id="L53">            String zipcode =request.getParameter(&quot;zipcode&quot;);</span>
+<span class="nc" id="L54">            String phone = request.getParameter(&quot;phone&quot;);</span>
+            
+          try{ 
+        //loading drivers for mysql
+<span class="nc" id="L58">        Class.forName(&quot;com.mysql.jdbc.Driver&quot;);</span>
+        //creating connection with the database 
+<span class="nc" id="L60">        Connection con =DriverManager.getConnection(&quot;jdbc:mysql://localhost:3306/carport?useSSL=false&quot;);</span>
+<span class="nc" id="L61">        PreparedStatement ps = con.prepareStatement(&quot;INSERT INTO `carport`.`customer`&quot;</span>
+                                                + &quot;(`username`,`firstname`,`lastname`,&quot;
+                                   + &quot;`password`,`email`,`address`,`zipcode`,`phone`)&quot;
+                                  + &quot;VALUES(?,?,?,?,?,?,?,?)&quot;);
+<span class="nc" id="L65">             ps.setString(1,name);</span>
+<span class="nc" id="L66">             ps.setString(2,fname);</span>
+<span class="nc" id="L67">             ps.setString(3,lname);</span>
+<span class="nc" id="L68">             ps.setString(4,pswd);</span>
+<span class="nc" id="L69">             ps.setString(5,email);</span>
+<span class="nc" id="L70">             ps.setString(6,address);</span>
+<span class="nc" id="L71">             ps.setString(7,zipcode);</span>
+<span class="nc" id="L72">             ps.setString(8,phone);</span>
+<span class="nc" id="L73">             int i = ps.executeUpdate();</span>
+             
+<span class="nc bnc" id="L75" title="All 2 branches missed.">              if(i&gt;0)</span>
+<span class="nc" id="L76">                 out.print(&quot;You are succesfully registered...&quot;);       </span>
+             } 
+<span class="nc" id="L78">           catch(ClassNotFoundException | SQLException se) {</span>
+<span class="nc" id="L79">        }</span>
+            
+<span class="nc" id="L81">    }</span>
+    
+    /**
+     * Returns a short description of the servlet.
+     *
+     * @return a String containing servlet description
+     */
+    @Override
+    public String getServletInfo() {
+<span class="nc" id="L90">        return &quot;Short description&quot;;</span>
+    }// &lt;/editor-fold&gt;
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.5.201505241946</span></div></body></html>

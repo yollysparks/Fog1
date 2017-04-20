@@ -9,7 +9,7 @@
     </listener>
     <servlet>
         <servlet-name>LoginServlet</servlet-name>
-        <servlet-class>Loginservlet</servlet-class>
+        <servlet-class>Utilities.LoginServlet</servlet-class>
         <load-on-startup>2</load-on-startup>
     </servlet>
     <servlet-mapping>

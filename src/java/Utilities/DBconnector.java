@@ -15,16 +15,16 @@ public class DBconnector {
 
     private final static String HOST     = "localhost";
     private final static int    PORT     = 3306;
-    private final static String DATABASE = "jdbc:mysql://localhost:3306/cupcakes?useSSL=false";
+    private final static String DATABASE = "jdbc:mysql://localhost:3306/carport?useSSL=false";
     private final static String USERNAME = "root"; 
     private final static String PASSWORD = "indeche2013";
-     private static String driver = "com.mysql.jdbc.Driver";
+    private static String driver = "com.mysql.jdbc.Driver";
     private static Connection connection = null;
     
     
     public static Connection getConnector() throws SQLException, ClassNotFoundException{
         if (connection == null) {
-            Class.forName("com.mysql.jdbc.Driver");
+            Class.forName(driver);
             String url = String.format("jdbc:mysql://localhost:3306/carport?useSSL=false", HOST, PORT, DATABASE);
             return DriverManager.getConnection(url, USERNAME, PASSWORD);
         }
@@ -55,10 +55,7 @@ public class DBconnector {
             Class.forName(driver);
             conn = DriverManager.getConnection(DBconnector.DATABASE,DBconnector.USERNAME,DBconnector.PASSWORD);
             
-        } catch(ClassNotFoundException se){
-           se.printStackTrace();
-        } catch (SQLException ex) {
-            ex.printStackTrace();
+        } catch(ClassNotFoundException | SQLException se){
         }
         return conn;
     }
@@ -83,7 +80,6 @@ public class DBconnector {
               if(conn!=null)
                  conn.close();
            }catch(SQLException se){
-              se.printStackTrace();
            }
         }
     }

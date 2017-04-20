@@ -4,18 +4,20 @@ package model;
  * @author Casper
  */
 public class User {
-    private String userName, password,firstName,lastName;
+    private String username, password,firstName,lastName;
     public boolean valid;
 
     public User(){
         
     }
 
-    public User(String userName, String password) {
-        this.userName = userName; 
+    public User(String username, String password, String firstName, String lastName) {
+        this.username = username;
         this.password = password;
-     
+        this.firstName = firstName;
+        this.lastName = lastName;
     }
+
 
     public String getFirstName() {
         return firstName;
@@ -34,11 +36,11 @@ public class User {
     }
 
     public String getUserName() {
-        return userName;
+        return username;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setUserName(String username) {
+        this.username = username;
     }
 
     public String getPassword() {

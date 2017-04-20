@@ -26,17 +26,14 @@ public class UserMapper {
        ResultSet rs = null;
         Statement stmt = null;
         User user = null;
-        String SQLString
-                = "select name "
-                + "from Customer "
-                + "where name = " + name;
+        String SQLString = "select * from customer where firstname = " + name;
         try {
             stmt = con.createStatement();
             rs = stmt.executeQuery(SQLString);
 
             if (rs.next()) {
-                 user = new User(name,
-                        rs.getString(2));
+                 user = new User(name,rs.getString(2),
+                        rs.getString(3),rs.getString(4));
             }
         } catch (SQLException e) {
             System.out.println("Fail in userMapper - getUserByName");
@@ -48,16 +45,13 @@ public class UserMapper {
    ResultSet rs = null;
         Statement stmt = null;
         User password = null;
-        String SQLString
-                = "select name "
-                + "from customer "
-                + "where eno = " + pswd;
+        String SQLString = "select firstname from customer where password = " + pswd;
         try {
             stmt = con.createStatement();
             rs = stmt.executeQuery(SQLString);
 
             if (rs.next()) {
-                 password = new User(rs.getString(1),
+                 password = new User(rs.getString(1),rs.getString(2),rs.getString(3),
                          pswd);
             }
         } catch (SQLException e) {

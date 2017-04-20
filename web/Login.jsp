@@ -9,14 +9,7 @@
 <!DOCTYPE html>
 <div class="login-page">
   <div class="form">
-    <form class="register-form">
-      <input type="text" placeholder="name"/>
-      <input type="password" placeholder="password"/>
-      <input type="text" placeholder="email address"/>
-      <button>create</button>
-      <p class="message">Already registered? <a href="#">Sign In</a></p>
-    </form>
-    <form method="POST" action="Loginservlet">
+    <form method="POST" action="LoginServlet">
       <input type="text" placeholder="username"/>
       <input type="password" placeholder="password"/>
       <button>login</button>

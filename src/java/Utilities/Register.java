@@ -11,6 +11,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.ServletException;
@@ -26,13 +27,12 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(name = "Register", urlPatterns = {"/Register"})
 public class Register extends HttpServlet {
 
-//   
-//    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-//            throws ServletException, IOException {
-//        response.setContentType("text/html;charset=UTF-8");
-// 
-    
-
+   
+    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+        doGet(request,response);
+    }
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -43,7 +43,9 @@ public class Register extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-       PrintWriter out = response.getWriter();
+       
+        PrintWriter out = response.getWriter();
+       
             String name =request.getParameter("username");
             String fname =request.getParameter("firstname");
             String lname =request.getParameter("lastname");
@@ -58,22 +60,23 @@ public class Register extends HttpServlet {
         Class.forName("com.mysql.jdbc.Driver");
         //creating connection with the database 
         Connection con =DriverManager.getConnection("jdbc:mysql://localhost:3306/carport?useSSL=false");
-        PreparedStatement ps = con.prepareStatement("INSERT INTO `carport`.`customer`"
-                                                + "(`username`,`firstname`,`lastname`,"
-                                   + "`password`,`email`,`address`,`zipcode`,`phone`)"
-                                  + "VALUES(?,?,?,?,?,?,?,?)");
-             ps.setString(1,name);
-             ps.setString(2,fname);
-             ps.setString(3,lname);
-             ps.setString(4,pswd);
-             ps.setString(5,email);
-             ps.setString(6,address);
-             ps.setString(7,zipcode);
-             ps.setString(8,phone);
-             int i = ps.executeUpdate();
+        Statement stmt =null;
+        stmt = con.createStatement();
+        int i=stmt.executeUpdate("INSERT INTO customer VALUES('"+name+"','"+fname+"','"+lname+"','"+pswd+"','"+email+"','"+address+"','"+zipcode+"','"+phone+"')");
+//             ps.setString(1,name);
+//             ps.setString(2,fname);
+//             ps.setString(3,lname);
+//             ps.setString(4,pswd);
+//             ps.setString(5,email);
+//             ps.setString(6,address);
+//             ps.setString(7,zipcode);
+//             ps.setString(8,phone);
+//             int i = ps.executeUpdate();
              
               if(i>0)
-                 out.print("You are succesfully registered...");       
+                 out.print("You are succesfully registered...");
+              else                
+                 out.println("Insert Unsuccessful");  
              } 
            catch(ClassNotFoundException | SQLException se) {
         }
