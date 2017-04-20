@@ -62,32 +62,35 @@ public class Register extends HttpServlet {
         Connection con =DriverManager.getConnection("jdbc:mysql://localhost:3306/carport?useSSL=false");
         Statement stmt =null;
         stmt = con.createStatement();
+        PreparedStatement ps = null;
         int i=stmt.executeUpdate("INSERT INTO customer VALUES('"+name+"','"+fname+"','"+lname+"','"+pswd+"','"+email+"','"+address+"','"+zipcode+"','"+phone+"')");
-//             ps.setString(1,name);
-//             ps.setString(2,fname);
-//             ps.setString(3,lname);
-//             ps.setString(4,pswd);
-//             ps.setString(5,email);
-//             ps.setString(6,address);
-//             ps.setString(7,zipcode);
-//             ps.setString(8,phone);
-//             int i = ps.executeUpdate();
-             
+             ps.setString(1,name);
+             ps.setString(2,fname);
+             ps.setString(3,lname);
+             ps.setString(4,pswd);
+             ps.setString(5,email);
+             ps.setString(6,address);
+             ps.setString(7,zipcode);
+             ps.setString(8,phone);
+              
               if(i>0)
                  out.print("You are succesfully registered...");
               else                
                  out.println("Insert Unsuccessful");  
              } 
+          
            catch(ClassNotFoundException | SQLException se) {
+            request.setAttribute( "error", "login");
+            forward("/register.jsp", request, response);
         }
             
     }
-    
-    /**
-     * Returns a short description of the servlet.
-     *
-     * @return a String containing servlet description
-     */
+    private void forward( String url, HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException {
+        getServletContext()
+                .getRequestDispatcher( url )
+                .forward( request, response );
+    }
+   
     @Override
     public String getServletInfo() {
         return "Short description";

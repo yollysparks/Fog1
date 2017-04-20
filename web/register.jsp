@@ -33,6 +33,9 @@
         Address:
         <input type="text" name="address" value="" />
         <br/><br/>
+        Zipcode:
+        <input type="text" name="zipcode" value="" />
+        <br/><br/>
         Phone:
         <input type="text" name="phone" value="" />
         <br/><br/>

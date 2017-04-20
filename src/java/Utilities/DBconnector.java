@@ -44,7 +44,7 @@ public class DBconnector {
 //        Statement stmt = getConnector().createStatement();
 //        stmt.executeUpdate(query);
 //    }
-//    
+    
     public static PreparedStatement getPreparedStatement(String sql) throws SQLException, ClassNotFoundException{
         return getConnector().prepareStatement(sql);
     }
