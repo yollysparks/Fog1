@@ -33,7 +33,7 @@ public class CarportCalculator {
     public int calculateParts(){
         
         double parts;
-        parts = ((wigth * length) * 20)* 0.5 ; // adding 0.5 to be abble to add 
+        parts = ((wigth * length) * 20) + 0.5 ; // adding 0.5 to be abble to add 
         
         return ((int) Math.round(parts));
     }

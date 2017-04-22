@@ -33,16 +33,16 @@ public class CarportParts extends HttpServlet {
         
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            Double wight = Double.parseDouble(request.getParameter("wight"));
+        Double wight = Double.parseDouble(request.getParameter("wight"));
         Double length = Double.parseDouble(request.getParameter("length"));
         boolean isFlat= Boolean.parseBoolean(request.getParameter("isFlat")); 
         CarportCalculator calculator = new CarportCalculator(wight, length, isFlat);
         HttpSession session = request.getSession();
         session.setAttribute("finalPrice", calculator.calculatePrice());
         session.setAttribute("numberOfParts", calculator.calculateParts());
-        response.sendRedirect("CarportPartsGenerated.jsp");
+        response.sendRedirect("CarportGen.jsp");
         }
-        response.sendRedirect("CarportPartsGenerated.jsp");
+        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
