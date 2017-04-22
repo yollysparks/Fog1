@@ -13,6 +13,9 @@
     </head>
     <body>
         Total Prise is : <% out.print(session.getAttribute("finalPrice"));%>
+        <br>
         # of parts: <% out.print(session.getAttribute("numberOfParts"));%>
+        
+        <SVG ...>
     </body>
 </html>
