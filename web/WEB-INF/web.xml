@@ -12,9 +12,17 @@
         <servlet-class>Utilities.LoginServlet</servlet-class>
         <load-on-startup>2</load-on-startup>
     </servlet>
+    <servlet>
+        <servlet-name>CarportParts</servlet-name>
+        <servlet-class>Utilities.CarportParts</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
         <url-pattern>/LoginServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CarportParts</servlet-name>
+        <url-pattern>/CarportParts</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
