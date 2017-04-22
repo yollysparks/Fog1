@@ -15,8 +15,8 @@
         <h1>Carport Generator 0.1</h1>
         <form target="CarportParts" method="post">
             <br>
-            Height:
-            <input type="text" name="height">
+            Wight:
+            <input type="text" name="wight">
             <br>
             <br>
             Length:
