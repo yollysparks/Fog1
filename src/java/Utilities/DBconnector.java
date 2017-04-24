@@ -30,25 +30,6 @@ public class DBconnector {
         }
         return connection;
     }
-//    public static void main(String[] args) throws SQLException, ClassNotFoundException {
-//        new DBconnector();
-//    }
-//    public ResultSet doQuery(String query) throws SQLException, ClassNotFoundException{
-//        System.out.println("*********"+query);
-//        Statement stmt = getConnector().createStatement();
-//        ResultSet res = stmt.executeQuery(query);
-//        return res;
-//    }
-//    
-//    public void doUpdate(String query) throws SQLException, ClassNotFoundException{
-//        Statement stmt = getConnector().createStatement();
-//        stmt.executeUpdate(query);
-//    }
-    
-    public static PreparedStatement getPreparedStatement(String sql) throws SQLException, ClassNotFoundException{
-        return getConnector().prepareStatement(sql);
-    }
-
     public Connection getConnection() {
      Connection conn = null;
         try{

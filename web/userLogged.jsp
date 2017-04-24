@@ -4,6 +4,7 @@
     Author     : felesiah
 --%>
 
+<%@page import="javax.websocket.Session"%>
 <%@page import="model.User"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -14,11 +15,10 @@
       </head>
 	
       <body>
-
          <center>
        <%User currentUser = (User(ses.getAttribute("currentUser")));%>
 			
-            Welcome <%= currentUser.getFirstName() + " " + currentUser.getLastName() %>
+           Welcome <%= currentUser.getFirstName() + " " + currentUser.getLastName() %>
          </center>
 
     </body>

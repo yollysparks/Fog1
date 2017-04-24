@@ -12,8 +12,6 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -45,7 +43,6 @@ public class Register extends HttpServlet {
             throws ServletException, IOException {
        
         PrintWriter out = response.getWriter();
-       
             String name =request.getParameter("username");
             String fname =request.getParameter("firstname");
             String lname =request.getParameter("lastname");

@@ -51,20 +51,6 @@ public class DBconnectorTest {
         Connection expResult = null;
         Connection result = DBconnector.getConnector();
         assertEquals(expResult, result);
-       
-    }
-
-    /**
-     * Test of getPreparedStatement method, of class DBconnector.
-     * @throws java.lang.Exception
-     */
-    @Test
-    public void testGetPreparedStatement() throws Exception {
-        System.out.println("getPreparedStatement");
-        String sql = "select * from customer;";
-        PreparedStatement expResult = null;
-        PreparedStatement result = DBconnector.getPreparedStatement(sql);
-        assertEquals(expResult, result);
         
     }
 
@@ -78,7 +64,7 @@ public class DBconnectorTest {
         Connection expResult = null;
         Connection result = instance.getConnection();
         assertEquals(expResult, result);
-        
+       
     }
 
     /**

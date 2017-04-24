@@ -9,7 +9,7 @@
 <!DOCTYPE html>
 <div class="login-page">
   <div class="form">
-    <form method="POST" action="LoginServlet">
+    <form method="POST" action="Login">
       <input type="text" placeholder="username"/>
       <input type="password" placeholder="password"/>
       <button>login</button>
