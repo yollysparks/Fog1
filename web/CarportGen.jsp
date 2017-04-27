@@ -5,6 +5,7 @@
 --%>
 
 <%@page language='java' contentType="text/html" pageEncoding="UTF-8"%>
+<link rel="stylesheet" href="CSSz.css">
 <!DOCTYPE html>
 <html>
     <head>
@@ -12,7 +13,7 @@
         <title>JSP Page</title>
     </head>
     <body>
-        Total Prise is : <% out.print(session.getAttribute("finalPrice"));%>
+        Total Price is : <% out.print(session.getAttribute("finalPrice"));%>
         <br>
         # of parts: <% out.print(session.getAttribute("numberOfParts"));%>
         <br>
