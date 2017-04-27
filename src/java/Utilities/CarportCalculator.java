@@ -19,24 +19,18 @@ package Utilities;
  */
 public class CarportCalculator {
     
-    double wigth;
+    double width;
     double length;
     boolean isFlat; //  This valuse is used to check if the rooftop is falt or not.
 
-    public CarportCalculator(double wigth, double length, boolean isFlat) {
-        this.wigth = wigth;
+    public CarportCalculator(double width, double length, boolean isFlat) {
+        this.width = width;
         this.length = length;
         this.isFlat = isFlat;
     }
     
-    /*
-    This method calculate the final price of the shed, based on all the parts
-    that will be needed to build the carport, accordin to its wight and lenght.
-    We assume that a single part costs 50 kr. In case the roof is nonflat (naming ?)
-    We call a separate method to calculate those prices ass well.
-    */
-    public double calculatePrice(){  
-        double priceOfAPart = 50;
+    public double calculatePrice(){
+           double priceOfAPart = 50;
         
         return (calculateParts() * priceOfAPart);
     }
@@ -63,9 +57,9 @@ public class CarportCalculator {
     */
     public int calculateParts(){
         
-        double lengthParts, wightParts = 0;
+         double lengthParts, wightParts = 0;
         lengthParts = (length * 20); // adding 0.5 to be abble to add 
-        wightParts = (wigth * 20);
+        wightParts = (width * 20);
         return ((int)Math.ceil(lengthParts + wightParts));
     }
     
@@ -77,7 +71,7 @@ public class CarportCalculator {
     Math.ceil is used again, for the same reason as in the previous class.
     */
     public int calculateBigRoofParts(){
-        double sizeOfRoof = wigth * length;
+        double sizeOfRoof = width * length;
        int partsPerSquareMeter = 100;
        
        /*
