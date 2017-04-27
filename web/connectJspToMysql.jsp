@@ -6,12 +6,12 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<link rel="stylesheet" href="CSSz.css">
 <%@ page import="java.sql.*" %>
 <%@ page import="java.io.*" %> 
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="CSSz.css">
         <title>JSP Page</title>
     </head>
     <body>
