@@ -11,18 +11,18 @@ package Utilities;
  */
 public class CarportCalculator {
     
-    double wigth;
+    double width;
     double length;
     boolean isFlat = true;    
 
-    public CarportCalculator(double wigth, double length, boolean isFlat) {
-        this.wigth = wigth;
+    public CarportCalculator(double width, double length, boolean isFlat) {
+        this.width = width;
         this.length = length;
         this.isFlat = true;
     }
     
     public double calculatePrice(){
-        double result = (wigth * length) * 1000;
+        double result = (width * length) * 1000;
         
         if (!isFlat){
             result = (result * 1.2);
@@ -33,7 +33,7 @@ public class CarportCalculator {
     public int calculateParts(){
         
         double parts;
-        parts = ((wigth * length) * 20) + 0.5 ; // adding 0.5 to be abble to add 
+        parts = ((width * length) * 20) + 0.5 ; // adding 0.5 to be able to add 
         
         return ((int) Math.round(parts));
     }
