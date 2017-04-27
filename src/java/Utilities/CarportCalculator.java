@@ -7,36 +7,12 @@ package Utilities;
 
 /**
  *
- * @author mre44
+ * @author felesiah
  */
-public class CarportCalculator {
-    
-    double width;
-    double length;
-    boolean isFlat = true;    
+class CarportCalculator {
 
-    public CarportCalculator(double width, double length, boolean isFlat) {
-        this.width = width;
-        this.length = length;
-        this.isFlat = true;
+    CarportCalculator(Double wight, Double length, boolean flat) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
-    public double calculatePrice(){
-        double result = (width * length) * 1000;
-        
-        if (!isFlat){
-            result = (result * 1.2);
-        }
-        return result;
-    }
-    
-    public int calculateParts(){
-        
-        double parts;
-        parts = ((width * length) * 20) + 0.5 ; // adding 0.5 to be able to add 
-        
-        return ((int) Math.round(parts));
-    }
-    
     
 }
