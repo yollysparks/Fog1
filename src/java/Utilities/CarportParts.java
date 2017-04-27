@@ -33,10 +33,10 @@ public class CarportParts extends HttpServlet {
         
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-        Double wight = Double.parseDouble(request.getParameter("wight"));
+        Double width = Double.parseDouble(request.getParameter("width"));
         Double length = Double.parseDouble(request.getParameter("length"));
         boolean isFlat= Boolean.parseBoolean(request.getParameter("isFlat")); 
-        CarportCalculator calculator = new CarportCalculator(wight, length, isFlat);
+        CarportCalculator calculator = new CarportCalculator(width, length, isFlat);
         HttpSession session = request.getSession();
         session.setAttribute("finalPrice", calculator.calculatePrice());
         session.setAttribute("numberOfParts", calculator.calculateParts());
