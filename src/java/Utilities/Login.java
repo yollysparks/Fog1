@@ -80,13 +80,13 @@ public class Login extends HttpServlet {
         String email = request.getParameter("email");
         String password = request.getParameter("pass");
         
-        if(Validate.checkUser(email,pass))
+        // if(Validate.checkUser(email,pass))
         {
             RequestDispatcher rs = request.getRequestDispatcher("Welcome");
                     rs.forward(request,response);
         }
         
-        else 
+        // else 
         {
             out.println("Username or Password is incorrect, please use brain");
             RequestDispatcher rs = request.getRequestDispatcher("Login.jsp");
