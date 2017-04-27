@@ -5,6 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<link rel="stylesheet" href="CSSz.css">
 <!DOCTYPE html>
 <html>
     <head>
@@ -16,7 +17,7 @@
         <form action="CarportParts" method="POST">
             <br>
             Wight:
-            <input type="text" name="wight">
+            <input type="text" name="width">
             <br>
             <br>
             Length:

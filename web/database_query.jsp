@@ -5,6 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<link rel="stylesheet" href="CSSz.css">
 <!DOCTYPE html>
 <%@ page import="java.sql.*" %> 
 <%@ page import="java.io.*" %> 
@@ -21,7 +22,7 @@ table click here...</h2></TD>
 </TR>
 <TR>
     <TD>
-        <select name="Carpor Styles">
+        <select name="Carport Styles">
             <option>Flat roof</option>
             <option>Raised roof</option>
         </select><A HREF="connectJspToMysql.jsp">

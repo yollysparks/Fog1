@@ -57,7 +57,7 @@ public class Login extends HttpServlet {
         catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
              request.setAttribute( "error", "login");
-            forward("/invalidLogin.jsp", request, response);
+            forward("/database_query.jsp", request, response);
         }
         
     }
