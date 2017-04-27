@@ -5,13 +5,13 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<link rel="stylesheet" href="CSSz.css">
 <!DOCTYPE html>
+<link rel="stylesheet" href="CSSz.css">
 <div class="login-page">
   <div class="form">
     <form method="POST" action="Login">
       <input type="text" placeholder="username"/>
-      <input type="password" placeholder="password"/>
+      <input type="text" placeholder="password"/>
       <button>login</button>
       <p class="message">Not registered? <a href="register.jsp">Create an account</a></p>
     </form>

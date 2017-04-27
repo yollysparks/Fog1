@@ -6,6 +6,7 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+<link rel="stylesheet" href="CSSz.css">
 <%@ page import="java.sql.*" %>
 <%@ page import="java.io.*" %> 
 <html>
@@ -71,7 +72,7 @@ out.println("Unable to connect to database.");
 <TR>
 <TD><FORM ACTION="database_query.jsp" method="get" >
 <button type="submit"><-- back</button></TD>
-
+<p class="message">Want to input measurements? <a href="CarportInput.jsp">Click here!!</a></p>
 
 </TR>
 </TABLE>
