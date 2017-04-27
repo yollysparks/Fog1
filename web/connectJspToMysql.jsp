@@ -37,7 +37,7 @@ connection = DriverManager.getConnection(connectionURL, "root", "indeche2013");
 sending sql statements to the specified database. */
 statement = connection.createStatement();
 // sql query to retrieve values from the secified table.
-String QueryString = "SELECT * from carport_parts";
+String QueryString = "SELECT * from customer;";
 rs = statement.executeQuery(QueryString);
 %>
 <TABLE cellpadding="15" border="1" style="background-color: #ffffcc;">
@@ -71,6 +71,8 @@ out.println("Unable to connect to database.");
 <TR>
 <TD><FORM ACTION="database_query.jsp" method="get" >
 <button type="submit"><-- back</button></TD>
+
+
 </TR>
 </TABLE>
 </font>

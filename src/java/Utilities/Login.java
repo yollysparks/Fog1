@@ -41,7 +41,7 @@ public class Login extends HttpServlet {
         String pass = request.getParameter("pass");
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/carport", "root", "");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/carport", "root", "indeche13");
             PreparedStatement pst = conn.prepareStatement("Select firstname,lastname from customer where username=? and password=?");
             pst.setString(1, user);
             pst.setString(2, pass);
@@ -57,7 +57,7 @@ public class Login extends HttpServlet {
         catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
              request.setAttribute( "error", "login");
-            forward("/invalidLogin.jsp", request, response);
+            forward("/database_query.jsp", request, response);
         }
         
     }
