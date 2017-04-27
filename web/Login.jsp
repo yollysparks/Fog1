@@ -11,7 +11,8 @@
   <div class="form">
     <form method="POST" action="Login">
       <input type="text" placeholder="username"/>
-      <input type="password" placeholder="password"/>
+      <input type="text" placeholder="pass"/>
+      <input type="submit" value="login" />
       <button>login</button>
       <p class="message">Not registered? <a href="register.jsp">Create an account</a></p>
     </form>

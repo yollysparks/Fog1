@@ -1,7 +1,7 @@
 <%-- 
     Document   : register
     Created on : 07-04-2017, 13:40:10
-    Author     : felesiah
+    Author     : Casper & Feleiash
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
