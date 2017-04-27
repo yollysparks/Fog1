@@ -13,7 +13,7 @@
     </head>
     <body>
         <h1>Carport Generator 0.1</h1>
-        <form action="CarportParts" method="POST">
+        <form action="CarportInput" method="POST">
             <br>
             Wight:
             <input type="text" name="wight">

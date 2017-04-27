@@ -2,6 +2,8 @@
     Document   : CarportPartsGenerated
     Created on : Apr 22, 2017, 4:44:11 PM
     Author     : Jack
+    
+    A JSP that uses lots of dummy data input and hardcoded SVG scetches
 --%>
 
 <%@page language='java' contentType="text/html" pageEncoding="UTF-8"%>

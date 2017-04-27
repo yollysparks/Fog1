@@ -17,7 +17,7 @@ import javax.servlet.http.HttpSession;
  *
  * @author Jack
  */
-public class CarportParts extends HttpServlet {
+public class CarportInput extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -28,6 +28,11 @@ public class CarportParts extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
+    
+    /*
+    This process calculates all the needed parts and their total price
+    and then puts then as session objects, so that they would be used later.
+    */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
@@ -39,8 +44,8 @@ public class CarportParts extends HttpServlet {
         CarportCalculator calculator = new CarportCalculator(wight, length, isFlat);
         HttpSession session = request.getSession();
         session.setAttribute("finalPrice", calculator.calculatePrice());
-        session.setAttribute("numberOfParts", calculator.calculateParts());
-        response.sendRedirect("CarportGen.jsp");
+        session.setAttribute("numberOfParts", calculator.calculateAllParts());
+        response.sendRedirect("CarportPriceAndScetch.jsp");
         }
         
     }

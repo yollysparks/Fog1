@@ -13,16 +13,16 @@
         <load-on-startup>2</load-on-startup>
     </servlet>
     <servlet>
-        <servlet-name>CarportParts</servlet-name>
-        <servlet-class>Utilities.CarportParts</servlet-class>
+        <servlet-name>CarportInput</servlet-name>
+        <servlet-class>Utilities.CarportInput</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
         <url-pattern>/LoginServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>CarportParts</servlet-name>
-        <url-pattern>/CarportParts</url-pattern>
+        <servlet-name>CarportInput</servlet-name>
+        <url-pattern>/CarportInput</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
