@@ -40,6 +40,7 @@
         <input type="text" name="phone" value="" />
         <br/><br/>
         <input type="Submit"  value="Register" />
+        
         <br/> <br/>       
              </form> 
          </div>
