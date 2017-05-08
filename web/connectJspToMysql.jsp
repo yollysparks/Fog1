@@ -38,7 +38,7 @@ connection = DriverManager.getConnection(connectionURL, "root", "indeche2013");
 sending sql statements to the specified database. */
 statement = connection.createStatement();
 // sql query to retrieve values from the secified table.
-String QueryString = "SELECT * from customer;";
+String QueryString = "SELECT * from carportitemsprice;";
 rs = statement.executeQuery(QueryString);
 %>
 <TABLE cellpadding="15" border="1" style="background-color: #ffffcc;">
@@ -52,8 +52,16 @@ rs = statement.executeQuery(QueryString);
 <TD><%=rs.getString(4)%></TD>
 <TD><%=rs.getString(5)%></TD>
 <TD><%=rs.getString(6)%></TD>
-<TD><%=rs.getInt(7)%></TD>
-<TD><%=rs.getInt(8)%></TD>
+<TD><%=rs.getString(7)%></TD>
+<TD><%=rs.getString(8)%></TD>
+<TD><%=rs.getString(9)%></TD>
+<TD><%=rs.getString(10)%></TD>
+<TD><%=rs.getString(11)%></TD>
+<TD><%=rs.getString(12)%></TD>
+<TD><%=rs.getString(13)%></TD>
+<TD><%=rs.getString(14)%></TD>
+<TD><%=rs.getString(15)%></TD>
+<TD><%=rs.getString(16)%></TD>
 </TR>
 <% } %>
 <%
